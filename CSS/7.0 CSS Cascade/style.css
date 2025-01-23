@@ -20,6 +20,5 @@ p {
 }
 
 #outer-box {
-  padding: 10px;
-  border: 15px solid rgb(127, 3, 127);
+  background-color: purple;
 }
