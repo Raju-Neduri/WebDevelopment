@@ -2,6 +2,16 @@ h1 {
   text-align: center;
 }
 
-.navbar {
-  background-color: Gray;
+.navbar ul {
+  background-color: DimGray;
+  list-style-type: none;
+
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 15px;
+  display: flex;
+  position: relative;
 }
