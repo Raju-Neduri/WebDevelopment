@@ -30,6 +30,12 @@ img {
   /* Adjust logo size */
 }
 
+img:hover {
+  width: 100px;
+  border: 5px solid gold;
+}
+
+
 .navbar {
   display: flex;
   gap: 3rem;
@@ -45,6 +51,7 @@ li {
 
 li:hover {
   color: royalblue;
+  font-weight: 700;
   /* Hover effect */
 }
 
@@ -53,15 +60,70 @@ button {
   color: aliceblue;
   font-size: large;
   font-weight: 600;
-  padding: 15px;
-  border-radius: 10%;
-  border: none;
+  padding: 15px 25px;
+  /* Consistent padding */
+  border: 2px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  /* Smooth transition */
+}
+
+
+button:hover {
+  background-color: royalblue;
+  /* Hover background color */
+  border-color: aliceblue;
+  /* Change border color */
+  font-weight: 700;
+  /* Bold font */
 }
 
 
 
-.button:hover {
-  background-color: royalblue;
-  border-color: aliceblue;
-  /* Button hover effect */
+/* Tablet View (max-width: 1024px) */
+@media (max-width: 1024px) {
+  img {
+    width: 70px;
+    /* Adjust logo size */
+  }
+
+  .navbar {
+    gap: 1.5rem;
+    /* Reduce gap */
+  }
+
+  button {
+    padding: 12px 20px;
+    /* Adjust button size */
+  }
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+    flex-direction: column;
+    /* Stack items */
+    align-items: flex-start;
+    /* Left align */
+  }
+
+  .navbar {
+    flex-direction: column;
+    /* Vertical links */
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  img {
+    width: 60px;
+    /* Smaller logo */
+  }
+
+  button {
+    margin-top: 15px;
+    width: 100%;
+    /* Full-width button */
+  }
 }
