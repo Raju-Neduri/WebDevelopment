@@ -9,62 +9,84 @@
   <style>
     body {
       font-family: "Sono", sans-serif;
+      padding: 10px;
+
 
     }
 
     .pricing-container {
       display: flex;
-      flex-direction: column;
-      align-content: flex-start;
-      gap: 30px;
+      gap: 2rem;
+      justify-content: center;
       align-items: center;
-      max-height: max-content;
+      height: 100vh;
 
     }
 
     .pricing-plan {
-      border: 1px solid black;
-      justify-content: space-between;
-      background-color: rgb(247, 244, 244);
+      border: 2px solid black;
+      background-color: rgb(243, 241, 241);
+      flex: 1;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+      width: 350px;
 
     }
 
     .plan-title,
     .plan-price {
-      text-align: center;
-    }
 
-    .plan-title {
-      font-size: 17px;
+      margin-bottom: 15px;
       font-weight: bold;
     }
 
+    .plan-title {
+      font-size: 25px;
+      text-decoration-line: underline;
+      text-decoration-thickness: 4px;
+
+    }
+
     .plan-price {
-      font-size: 30px;
-      font-weight: 600;
+      font-size: 38px;
     }
 
     .plan-features {
       list-style-type: none;
+
 
     }
 
     .plan-features>li {
       font-size: large;
       font-weight: 600;
+
     }
 
     .plan-button {
       background-color: orange;
       color: white;
-      padding: 12px 8px;
-      justify-content: center;
-      align-items: center;
+      padding: 10px 20px;
+      border-radius: 10px;
+      margin-top: 15px;
+      border: none;
+      font-size: medium;
+      font-weight: bold;
     }
 
 
     /* Hint: What can you do with a media query and flexbox? */
-    @media (max-width: 1250px) {}
+    @media (max-width: 1250px) {
+      .pricing-container {
+
+        flex-direction: column;
+        height: 100%;
+
+
+      }
+    }
   </style>
 </head>
 
