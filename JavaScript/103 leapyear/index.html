@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Leap Year</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+      input,
+      button {
+        padding: 10px;
+        font-size: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Leap Year Checker</h1>
+    <input type="text" id="yearInput" placeholder="Enter a year" />
+    <button onclick="checkLeapYear()">Check</button>
+    <p id="result"></p>
+
+    <script>
+      function isLeap(year) {
+        if (year % 4 !== 0) {
+          return `Not a leap year.`;
+        } else if (year % 100 !== 0) {
+          return `Leap year.`;
+        } else if (year % 400 !== 0) {
+          return `Not a leap year.`;
+        } else {
+          return `Leap year.`;
+        }
+      }
+
+      function checkLeapYear() {
+        const year = parseInt(document.getElementById("yearInput").value);
+        const result = isLeap(year);
+        document.getElementById("result").textContent = result;
+      }
+    </script>
+  </body>
+</html>
