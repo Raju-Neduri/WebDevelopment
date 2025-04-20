@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Love Calculator</title>
+    <style>
+      body {
+        text-align: center;
+        font-family: Arial, sans-serif;
+      }
+      input {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+      p {
+        font-size: 100px;
+        color: red;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Love Calculator</h1>
+
+    <input type="text" id="name1" placeholder="Enter the first person's name" />
+    <input
+      type="text"
+      id="name2"
+      placeholder="Enter the second person's name"
+    />
+    <br />
+    <button onclick="calculateLove()">Submit</button>
+
+    <p id="output1"></p>
+    <p id="output"></p>
+
+    <script>
+      function calculateLove() {
+        const name1 = document.getElementById("name1").value;
+        const name2 = document.getElementById("name2").value;
+
+        // Generate a random love percentage
+        const lovePercent = Math.floor(Math.random() * 100) + 1;
+
+        // Show greeting and result
+        document.getElementById("output1").textContent = `${name1} ❤️ ${name2}`;
+        document.getElementById("output").textContent = lovePercent + "%";
+      }
+    </script>
+  </body>
+</html>
