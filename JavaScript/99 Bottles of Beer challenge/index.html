@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>99 Bottles of Beer</title>
+  </head>
+  <body>
+    <script>
+      let beerBottle = 99;
+
+      while (beerBottle >= 1) {
+        if (beerBottle === 1) {
+          console.log(`1 bottle of beer on the wall, 1 bottle of beer.
+Take one down and pass it around, no more bottles of beer on the wall.\n`);
+        } else {
+          console.log(`${beerBottle} bottles of beer on the wall, ${beerBottle} bottles of beer.
+Take one down and pass it around, ${beerBottle - 1} bottle${
+            beerBottle - 1 === 1 ? "" : "s"
+          } of beer on the wall.\n`);
+        }
+        beerBottle--;
+      }
+
+      console.log(`No more bottles of beer on the wall, no more bottles of beer.
+Go to the store and buy some more, 99 bottles of beer on the wall.`);
+    </script>
+  </body>
+</html>
