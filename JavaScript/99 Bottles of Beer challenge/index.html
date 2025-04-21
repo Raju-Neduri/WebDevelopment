@@ -4,26 +4,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>99 Bottles of Beer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        line-height: 1.6;
+        text-align: center;
+      }
+      #the-end {
+        font-weight: bold;
+        font-size: 24px;
+        margin-top: 40px;
+        color: #444;
+      }
+    </style>
   </head>
   <body>
+    <h1>99 Bottles of Beer 🍺</h1>
+    <div id="song"></div>
+    <p id="the-end"></p>
     <script>
       let beerBottle = 99;
+      const container = document.getElementById("song");
 
       while (beerBottle >= 1) {
         if (beerBottle === 1) {
-          console.log(`1 bottle of beer on the wall, 1 bottle of beer.
-Take one down and pass it around, no more bottles of beer on the wall.\n`);
+          container.innerHTML += `<p>1 bottle of beer on the wall, 1 bottle of beer.<br>
+          Take one down and pass it around, no more bottles of beer on the wall.</p>`;
         } else {
-          console.log(`${beerBottle} bottles of beer on the wall, ${beerBottle} bottles of beer.
-Take one down and pass it around, ${beerBottle - 1} bottle${
+          container.innerHTML += `<p>${beerBottle} bottles of beer on the wall, ${beerBottle} bottles of beer.<br>
+          Take one down and pass it around, ${beerBottle - 1} bottle${
             beerBottle - 1 === 1 ? "" : "s"
-          } of beer on the wall.\n`);
+          } of beer on the wall.</p>`;
         }
         beerBottle--;
       }
 
-      console.log(`No more bottles of beer on the wall, no more bottles of beer.
-Go to the store and buy some more, 99 bottles of beer on the wall.`);
+      container.innerHTML += `<p>No more bottles of beer on the wall, no more bottles of beer.<br>
+      Go to the store and buy some more, 99 bottles of beer on the wall.</p>`;
+
+      document.getElementById("the-end").textContent = "The End🍻";
     </script>
   </body>
 </html>
