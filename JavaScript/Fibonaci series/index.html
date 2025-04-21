@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fibonacci with For Loop</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        font-size: 60px;
+      }
+
+      p {
+        font-size: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Fibonacci Sequence</h1>
+    <p id="output"></p>
+
+    <script>
+      function fibonacciGenerator(n) {
+        let output = [];
+
+        if (n === 1) {
+          output = [0];
+        } else if (n === 2) {
+          output = [0, 1];
+        } else {
+          output = [0, 1];
+          for (let i = 2; i < n; i++) {
+            output.push(output[i - 1] + output[i - 2]);
+          }
+        }
+
+        // Print on screen
+        document.getElementById("output").textContent = output.join(", ");
+      }
+
+      fibonacciGenerator(prompt("Enter the number of items")); // You can change this number
+    </script>
+  </body>
+</html>
