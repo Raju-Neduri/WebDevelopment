@@ -1,93 +1,32 @@
 body {
   text-align: center;
   background-color: #283149;
+  margin: 0;
+  padding: 0;
+  font-family: "Arvo", cursive;
 }
 
 h1 {
   font-size: 5rem;
   color: #dbedf3;
-  font-family: "Arvo", cursive;
   text-shadow: 3px 0 #da0463;
+  margin-top: 40px;
 }
 
 footer {
   color: #dbedf3;
   font-family: sans-serif;
-}
-
-.w {
-  background-image: url("images/tom1.png");
-  background-size: cover; /* scales the image to cover the whole screen */
-  background-repeat: no-repeat; /* prevents repeating */
-  background-position: center;
-}
-
-.a {
-  background-image: url("images/crash.png");
-  background-size: cover; /* scales the image to cover the whole screen */
-  background-repeat: no-repeat; /* prevents repeating */
-  background-position: center;
-}
-
-.s {
-  background-image: url("images/tom2.png");
-  background-size: cover; /* scales the image to cover the whole screen */
-  background-repeat: no-repeat; /* prevents repeating */
-  background-position: center;
-}
-
-.d {
-  background-image: url("images/kick.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.j {
-  background-image: url("images/tom3.png");
-  background-size: cover; /* scales the image to cover the whole screen */
-  background-repeat: no-repeat; /* prevents repeating */
-  background-position: center;
-}
-
-.k {
-  background-image: url("images/snare.png");
-  background-size: cover; /* scales the image to cover the whole screen */
-  background-repeat: no-repeat; /* prevents repeating */
-  background-position: center;
-}
-
-.l {
-  background-image: url("images/tom4.png");
-  background-size: cover; /* scales the image to cover the whole screen */
-  background-repeat: no-repeat; /* prevents repeating */
-  background-position: center;
+  margin: 30px 0;
 }
 
 .set {
-  margin: 10% auto;
-}
-
-.game-over {
-  background-color: red;
-  opacity: 0.8;
-}
-
-.pressed {
-  box-shadow: 0 3px 4px 0 #dbedf3;
-  opacity: 0.5;
-}
-
-.red {
-  color: red;
+  margin: 5% auto;
 }
 
 .drum {
   outline: none;
   border: 10px solid #404b69;
   font-size: 5rem;
-  font-family: "Arvo", cursive;
-  line-height: 2;
   font-weight: 900;
   color: #da0463;
   text-shadow: 3px 0 #dbedf3;
@@ -95,7 +34,86 @@ footer {
   display: inline-block;
   width: 150px;
   height: 150px;
+  line-height: 150px;
   text-align: center;
   margin: 10px;
   background-color: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.15s ease;
+  user-select: none;
+  position: relative;
+}
+
+/* Background images */
+.w {
+  background-image: url("images/tom1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.a {
+  background-image: url("images/crash.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.s {
+  background-image: url("images/tom2.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.d {
+  background-image: url("images/kick.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.j {
+  background-image: url("images/tom3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.k {
+  background-image: url("images/snare.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.l {
+  background-image: url("images/tom4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Hover effect */
+.drum:hover {
+  cursor: pointer;
+  transform: scale(1.05) rotate(3deg);
+  box-shadow: 0 0 10px 3px #da0463, 0 0 15px 5px #ff2e63;
+  transition: all 0.2s ease;
+}
+
+/* Pressed effect */
+.pressed {
+  box-shadow: 0 0 15px 5px #da0463, 0 0 30px 10px #ff2e63, 0 0 40px 15px #ff2e63;
+  transform: scale(0.85) rotate(-5deg);
+  opacity: 0.8;
+  transition: all 0.15s ease;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+  }
+}
+
+.pressed.bounce {
+  animation: bounce 0.3s;
 }

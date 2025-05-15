@@ -23,32 +23,41 @@ function playSound(key) {
       break;
     default:
       console.log("Unknown key:", key);
+      return;
   }
+  buttonAnimation(key);
 }
 
-// When a drum button is clicked
-let buttons = document.getElementsByClassName("drum");
+function buttonAnimation(currentKey) {
+  const activeButton = document.querySelector("." + currentKey);
+  if (!activeButton) return;
 
+  activeButton.classList.add("pressed", "bounce");
+
+  setTimeout(() => {
+    activeButton.classList.remove("pressed", "bounce");
+  }, 300);
+}
+
+// Click event listeners on buttons
+const buttons = document.getElementsByClassName("drum");
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener("click", function () {
-    let buttonInnerText = this.innerText;
+    const buttonInnerText = this.innerText.toLowerCase();
     playSound(buttonInnerText);
   });
 }
 
-// When a keyboard key is pressed
+// Keyboard event listener
 document.addEventListener("keydown", function (event) {
-  playSound(event.key.toLowerCase());
-});
-
-// When "t" key is pressed, play a melody
-document.addEventListener("keydown", function (event) {
-  if (event.key.toLowerCase() === "t") {
-    let tune = ["a", "w", "s", "d", "j", "l", "k"];
+  const keyPressed = event.key.toLowerCase();
+  if (keyPressed === "t") {
+    // Play a short tune on pressing 't'
+    const tune = ["w", "a", "s", "d", "j", "k", "l"];
     for (let i = 0; i < tune.length; i++) {
-      setTimeout(() => {
-        playSound(tune[i]);
-      }, i * 400); // 400ms between each note
+      setTimeout(() => playSound(tune[i]), i * 400);
     }
+  } else {
+    playSound(keyPressed);
   }
 });
