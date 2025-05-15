@@ -16,24 +16,52 @@ footer {
 }
 
 .w {
+  background-image: url("images/tom1.png");
+  background-size: cover; /* scales the image to cover the whole screen */
+  background-repeat: no-repeat; /* prevents repeating */
+  background-position: center;
 }
 
 .a {
+  background-image: url("images/crash.png");
+  background-size: cover; /* scales the image to cover the whole screen */
+  background-repeat: no-repeat; /* prevents repeating */
+  background-position: center;
 }
 
 .s {
+  background-image: url("images/tom2.png");
+  background-size: cover; /* scales the image to cover the whole screen */
+  background-repeat: no-repeat; /* prevents repeating */
+  background-position: center;
 }
 
 .d {
+  background-image: url("images/kick.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .j {
+  background-image: url("images/tom3.png");
+  background-size: cover; /* scales the image to cover the whole screen */
+  background-repeat: no-repeat; /* prevents repeating */
+  background-position: center;
 }
 
 .k {
+  background-image: url("images/snare.png");
+  background-size: cover; /* scales the image to cover the whole screen */
+  background-repeat: no-repeat; /* prevents repeating */
+  background-position: center;
 }
 
 .l {
+  background-image: url("images/tom4.png");
+  background-size: cover; /* scales the image to cover the whole screen */
+  background-repeat: no-repeat; /* prevents repeating */
+  background-position: center;
 }
 
 .set {
